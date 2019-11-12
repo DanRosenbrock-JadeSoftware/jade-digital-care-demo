@@ -1,0 +1,40 @@
+// Import the initial variables
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Add new color variables to the color map.
+@import "~bulma/sass/utilities/derived-variables";
+
+// Import the rest of Bulma
+@import "~bulma/bulma";
+
+// Bulma Extensions
+
+//Common Stlyes
+@import "styles/common/variables";
+
+html,body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.body-content {
+  background-color: #ECF0F6;
+  display: flex;
+  flex-direction: column;
+}
+
+app-root, app-project-view {
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  width: 1440px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+app-project-view {
+  flex: 1;
+}

@@ -1,0 +1,8 @@
+<div [ngClass]="getClassForHeart(projectHealth)">
+  <div class="project-item-health">
+    <div class="heart-icon">
+      <svg-icon [applyCss]="true" src="../../../assets/icons/heart_icon.svg"></svg-icon>
+    </div>
+    <div>{{getTextForHeart(projectHealth)}}</div>
+  </div>
+</div>

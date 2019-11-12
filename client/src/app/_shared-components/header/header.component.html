@@ -1,0 +1,31 @@
+<nav class="navbar" id="navHeader" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+       data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item nav-link"  [routerLink]="['/team-view']" routerLinkActive="is-active">
+        Dashboard
+      </a>
+      <a class="navbar-item nav-link" [routerLink]="['/projects-view']" routerLinkActive="is-active">
+        My test Projects
+      </a>
+      <a class="navbar-item nav-link" [routerLink]="['/environment']" routerLinkActive="is-active">
+        Environment
+      </a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+
+        <input class="search" type="text" placeholder="Search">
+        <svg-icon class="svg-search" [applyCss]="true" src="../../../assets/icons/headersearch.svg"></svg-icon>
+
+      </div>
+    </div>
+  </div>
+</nav>

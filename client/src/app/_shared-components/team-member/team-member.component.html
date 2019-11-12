@@ -1,0 +1,7 @@
+<div class="team-member" *ngFor="let team of Teams;">
+  <div>
+    <img
+      src="{{team.ImageUrl}}" ngClass="{{imgClass}}"/><br>
+    <span *ngIf="displayName" >{{team.Name}}</span>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+@import "../../../styles/common/variables";
+
+.projects-view {
+  padding: 52px 40px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+
+  .page-header {
+    height: 38px;
+    width: 90px;
+    color: $text-main-color;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 38px;
+  }
+
+  .project-page-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .project-search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: auto;
+    padding-left: 5px;
+
+    width: 350px;
+    color: #6C6C6C;
+    font-family: Roboto;
+    font-size: 14px;
+    border-bottom: 1px solid #5C5C5C;
+
+    #searchIcon {
+      margin-bottom: 0;
+      stroke: #979797;
+    }
+
+  }
+
+  .project-panel {
+    background-color: $white;
+  }
+
+  .project-panel-header {
+    font-family: Roboto;
+
+    font-size: 14px;
+    line-height: 19px;
+    border-bottom: 1px solid $lightest-grey;
+
+    th {
+      color: $lighter-grey;
+      text-align: left;
+    }
+  }
+
+  .project-item-health {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12.8px;
+    line-height: 18px;
+  }
+
+  .heart-icon {
+    width: 34px;
+  }
+
+  .health-poor {
+    color: $health-poor;
+
+    #heartPath {
+      fill: url(#poor);
+    }
+  }
+
+  .health-average {
+    color: $health-average;
+
+    #heartPath {
+      fill: url(#average);
+    }
+  }
+
+  .health-very-good {
+    color: $health-very-good;
+
+    #heartPath {
+      fill: url(#good);
+    }
+  }
+
+  .health-excellent {
+    color: $health-excellent;
+
+    #heartPath {
+      fill: url(#excellent);
+      stroke: $health-excellent;
+    }
+  }
+
+  .project-panel-item {
+    border-bottom: 1px solid $lightest-grey;
+  }
+
+  .project-item-client, .project-item-team {
+    color: $text-main-color;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .project-item-name {
+    color: $text-blue;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .project-item-avg-deploy, .project-item-failure-rate, .project-item-team-nps {
+    color: $text-main-color;
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+.table td {
+  padding: 1.5em 1.7em;
+  vertical-align: middle;
+}
+
+tr > th {
+  padding-left: 28px;
+}
+
+#projectView > table > thead > tr > th:nth-child(3) {
+  padding-left: 48px;
+}
+
+

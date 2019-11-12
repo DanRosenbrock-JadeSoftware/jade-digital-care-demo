@@ -1,0 +1,81 @@
+@import "../../../styles/common/variables";
+
+.single-project {
+  font-family: "Open Sans", sans-serif;
+  color: $darker-grey;
+  font-weight: bold;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  .project-name {
+    color: $text-blue;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .project-header {
+    background-color: $white;
+    flex: none;
+    display: flex;
+  }
+
+  .project-header-main {
+    flex: auto;
+  }
+
+  .project-header-team{
+    padding-top: 14px;
+    flex: none;
+  }
+
+  .project-header-item {
+    padding: 10px !important;
+  }
+
+  .project-header-item + .project-header-item {
+    border-left: 1px solid #979797;
+  }
+
+  .project-tabs {
+    flex: none;
+  }
+
+  .project-tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-tab-pane {
+    flex: 1;
+  }
+
+  .project-header-title {
+    font-size: 16px;
+  }
+
+  .project-header-information {
+    font-size: 28px;
+  }
+
+  .dashboard {
+    height: calc(100% - 10px);
+    width: 100%
+  }
+
+  .project-info-tab {
+
+  }
+
+  .team-members {
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-gap: 10px;
+  }
+
+  .project-information {
+    padding-left: 20px;
+  }
+}

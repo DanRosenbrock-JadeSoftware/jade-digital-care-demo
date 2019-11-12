@@ -1,0 +1,73 @@
+<div class="single-project">
+  <div class="project-header">
+    <div class="project-header-main">
+      <div class="columns is-gapless">
+        <div class="column project-header-item is-two-fifths">
+          <div class="columns">
+            <div class="column project-information ">
+              <div class="project-name">
+                {{project.ClientName}}
+              </div>
+              <div class="project-header-information">
+                {{project.ProjectName}}
+              </div>
+            </div>
+            <div class="column project-health">
+              <app-project-health [projectHealth]=project.ProjectHealth></app-project-health>
+            </div>
+          </div>
+        </div>
+        <div class="column project-header-item">
+          <div class="project-header-information">{{project.StartToDeploy}}</div>
+          <div class="project-header-title"> Avg Start to Deploy time</div>
+        </div>
+        <div class="column project-header-item">
+          <div class="project-header-information">{{project.ChangeFailRate}}</div>
+          <div class="project-header-title">Change failure rate</div>
+        </div>
+        <div class="column project-header-item">
+          <div class="project-header-information">{{(team.TeamNpsRating)}}</div>
+          <div class="project-header-title">Team NPS Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="project-header-team">
+      <div class="project-header-title">{{team.Name}}</div>
+      <div class="project-header-title">
+        <app-team-member class="team-members" [imgClass]="'project-img'" [Teams]="team.Members"></app-team-member>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-tabs tabs" role="tablist">
+    <ul>
+      <li *ngFor="let projectTab of projectTabs" role="presentation" class="is-narrow"
+          [ngClass]="{'is-active':selectedTab===projectTab}"><a
+        (click)="selectedTab=projectTab"
+        aria-controls="one" role="tab"
+        data-toggle="tab">{{projectTab}}</a></li>
+    </ul>
+  </div>
+
+  <div class="project-tab-content">
+    <div *ngIf="selectedTab==='Overview' && project.ClientName === 'TAL'" class="project-tab-pane"
+         id="one">
+      <iframe class="dashboard"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYzI4NDQxYWItNGZmNi00MzNjLThhMTgtNjUyYjBjZWRmNDhiIiwidCI6ImMyYTEzZDRjLTI2YjUtNDYxZC04MjJkLWM2OGU1NGE5M2MxYSIsImMiOjEwfQ%3D%3D"></iframe>
+    </div>
+    <div *ngIf="selectedTab==='Overview' && project.ClientName === 'ClearView'" class="project-tab-pane"
+         id="two">
+      <iframe class="dashboard"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYzI4NDQxYWItNGZmNi00MzNjLThhMTgtNjUyYjBjZWRmNDhiIiwidCI6ImMyYTEzZDRjLTI2YjUtNDYxZC04MjJkLWM2OGU1NGE5M2MxYSIsImMiOjEwfQ%3D%3D"></iframe>
+    </div>
+
+    <div *ngIf="selectedTab==='Test Reports' && project.ClientName === 'TAL'" class="project-tab-pane">
+      <iframe class="dashboard"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYzI4NDQxYWItNGZmNi00MzNjLThhMTgtNjUyYjBjZWRmNDhiIiwidCI6ImMyYTEzZDRjLTI2YjUtNDYxZC04MjJkLWM2OGU1NGE5M2MxYSIsImMiOjEwfQ%3D%3D"></iframe>
+    </div>
+    <div *ngIf="selectedTab==='Test Reports' && project.ClientName === 'ClearView'" class="project-tab-pane">
+      <iframe class="dashboard"
+              src="https://clearviewtestresults.azurewebsites.net/TestResult.html"></iframe>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="934px" height="65px" viewBox="0 0 934 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>chart-2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Framework" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard/Home" transform="translate(-70.000000, -807.000000)">
+            <g id="chart-2" transform="translate(70.000000, 807.000000)">
+                <rect id="Rectangle-Copy-11" fill="#36C77B" x="0" y="0" width="569" height="65"></rect>
+                <rect id="Rectangle-Copy-16" fill="#079EDA" x="569" y="0" width="173" height="65"></rect>
+                <rect id="Rectangle-Copy-17" fill="#566473" x="742" y="0" width="65" height="65"></rect>
+                <rect id="Rectangle-Copy-18" fill="#FFC907" x="807" y="0" width="127" height="65"></rect>
+                <text id="New-features-Copy" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="5" y="16">New features</tspan>
+                </text>
+                <text id="Technical-debits-Copy" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="577" y="16">Technical debits</tspan>
+                </text>
+                <text id="Rework-Copy" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="751" y="16">Rework</tspan>
+                </text>
+                <text id="Bugs-Copy" font-family="OpenSans-Bold, Open Sans" font-size="13" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="819" y="16">Bugs</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

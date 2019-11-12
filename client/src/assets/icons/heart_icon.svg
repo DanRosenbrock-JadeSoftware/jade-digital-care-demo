@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1079 975">
+  <path id="heartPath" stroke="#AAAAAA" fill="none" stroke-linejoin="round" stroke-width="41"
+        d="M539.67893,949.745349 C539.403322,951.097565 539.169776,952.435136 538.979121,953.757812 C536.67361,948.079896 534.732129,939.561294 533.111569,928.650669 C489.707667,827.870222 268.264507,664.254544 131.21875,516.390625 C45.8618601,424.295805 21,332.901522 21,280.5 C21,137.182107 137.182107,21 280.5,21 C418.655,21 531.594083,128.962178 539.551843,265.121131 C548.492727,129.906474 661.001252,23 798.479121,23 C941.797013,23 1057.97912,139.182107 1057.97912,282.5 C1057.97912,334.901522 1033.11726,426.295805 947.760371,518.390625 C809.557138,667.503389 585.524856,832.635111 544.806054,933.190721 C543.417288,941.006873 541.822366,947.269765 540,951.757812 C539.90385,951.09077 539.796791,950.419939 539.678931,949.745351 Z"/>
+  <defs>
+    <linearGradient id="average" x1="0" y1="1" x2="0" y2="0">
+      <stop id="averageStop" offset="50%" stop-color="#DEEA42"/>
+      <stop id="stop2" offset="50%" stop-color="white"/>
+      <animate attributeName="y2" dur="2500ms" from="100%" to="0%" repeatCount="once" />
+    </linearGradient>
+    <linearGradient id="good" x1="0" y1="1" x2="0" y2="0">
+      <stop id="goodStop" offset="75%" stop-color="#4DC736"/>
+      <stop id="stop2" offset="25%" stop-color="white"/>
+      <animate attributeName="y2" dur="2000ms" from="100%" to="0%" repeatCount="once" />
+    </linearGradient>
+    <linearGradient id="poor" x1="0" y1="1" x2="0" y2="0">
+      <stop id="averagePoor" offset="25%" stop-color="#E44C41"/>
+      <stop id="stop2" offset="25%" stop-color="white"/>
+      <animate attributeName="y2" dur="3000ms" from="100%" to="0%" repeatCount="once" />
+    </linearGradient>
+    <linearGradient id="excellent" x1="0" y1="1" x2="0" y2="0">
+      <stop id="excellent" offset="100%" stop-color="#31BC87"/>
+      <stop id="stop2" offset="0%" stop-color="white"/>
+      <animate attributeName="y2" dur="1500ms" from="100%" to="0%" repeatCount="once" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,50 @@
+#navHeader {
+  height: 60px;
+  width: auto;
+  background-color: #6B6864;
+
+  .nav-link {
+    padding: 19px 40px 18px 40px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 23px;
+  }
+  .nav-link:hover {
+    background-color: #262626;
+  }
+
+  .search {
+
+    color: #FFFFFF;
+    background-color: #6B6864;
+    border-style: hidden;
+    border-bottom: #FFFFFF 1px solid;
+  }
+}
+input[type="text"] {
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFFFF;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFFFFF;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #FFFFFF;
+}
+
+.is-active {
+  background-color: #262626 !important;
+}
+
+.svg-search {
+  padding-left: 10px;
+}
+

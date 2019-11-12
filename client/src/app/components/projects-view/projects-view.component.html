@@ -1,0 +1,35 @@
+<div class="projects-view" id="projectView">
+  <div class="project-page-header">
+    <a class="page-header">Projects</a>
+    <div class="project-search-bar">
+      <div>Project name</div>
+      <svg-icon [applyCss]="true" src="../../../assets/icons/search_icon.svg"></svg-icon>
+    </div>
+  </div>
+  <table class="table is-fullwidth">
+    <thead class="project-panel-header">
+    <tr>
+      <th>PROJECTS</th>
+      <th>CLIENT</th>
+      <th>HEALTH</th>
+      <th>PRODUCTION DEPLOYMENT FREQUENCY</th>
+      <th>CHANGE FAILURE RATE</th>
+      <th>TEAM NPS RATING</th>
+      <th>TEAM</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects" class="project-panel-item">
+      <td><a class="project-item-name" [routerLink]="['/project', project.Id]">{{project.ProjectName}}</a></td>
+      <td class="project-item-client">{{project.ClientName}}</td>
+      <td>
+        <app-project-health [projectHealth]="project.ProjectHealth"></app-project-health>
+      </td>
+      <td class="project-item-avg-deploy">{{project.StartToDeploy}}</td>
+      <td class="project-item-failure-rate">{{project.ChangeFailRate}}</td>
+      <td class="project-item-team-nps">{{getTeamNPSForProject(project.TeamId)}}</td>
+      <td class="project-item-team">{{getTeamNameForProject(project.TeamId)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

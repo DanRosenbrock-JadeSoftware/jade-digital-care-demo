@@ -1,0 +1,48 @@
+@import "../../../styles/common/variables";
+
+.project-item-health {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+padding-top: 14px;
+  font-size: 12.8px;
+  line-height: 18px;
+}
+
+.heart-icon {
+  width: 34px;
+}
+
+.health-poor {
+  color: $health-poor;
+
+  #heartPath {
+    fill: url(#poor);
+  }
+}
+
+.health-average {
+  color: $health-average;
+
+  #heartPath {
+    fill: url(#average);
+  }
+}
+
+.health-very-good {
+  color: $health-very-good;
+
+  #heartPath {
+    fill: url(#good);
+  }
+}
+
+.health-excellent {
+  color: $health-excellent;
+
+  #heartPath {
+    fill: url(#excellent);
+    stroke: $health-excellent;
+  }
+}

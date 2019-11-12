@@ -1,0 +1,12 @@
+<div class="team-view" id="teamView">
+  <a class="page-header">Teams</a>
+  <div *ngFor="let team of Teams; index as i;" class="content team-panel">
+    <div class="column is-three-quarters">
+      <h1 class="team-name">{{team.Name}}</h1>
+      <app-deployment-statistics [ProjectId]="team.ProjectId" [TeamNpsRating]="team.TeamNpsRating" ></app-deployment-statistics>
+      <app-team-work-breakdown [ProjectId]="team.ProjectId" [TeamWorkBreakdown]="TeamWorkBreakdown[i]"></app-team-work-breakdown>
+    </div>
+       <app-team-member [Teams]="team.Members" class="team-members column is-one-quarter" [imgClass]="'dashboard-img'" [displayName]="true"></app-team-member>
+    </div>
+</div>
+

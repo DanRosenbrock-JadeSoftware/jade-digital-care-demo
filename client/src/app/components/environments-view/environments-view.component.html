@@ -1,0 +1,17 @@
+<div class="environment">
+  <app-environment-header></app-environment-header>
+  <div class="project-tabs tabs" role="tablist">
+    <ul>
+      <li *ngFor="let projectTab of projectTabs" role="presentation" class="is-narrow"
+          [ngClass]="{'is-active':selectedTab===projectTab}"><a
+        (click)="selectedTab=projectTab"
+        aria-controls="one" role="tab"
+        data-toggle="tab">{{projectTab}}</a></li>
+    </ul>
+  </div>
+  <app-copy-environment *ngIf="selectedTab === projectTabs[4]"></app-copy-environment>
+  <app-request-new-environment *ngIf="selectedTab === projectTabs[3]"></app-request-new-environment>
+  <app-create-new-environment *ngIf="selectedTab === projectTabs[2]"></app-create-new-environment>
+  <iframe *ngIf="selectedTab === projectTabs[0]" class="dashboard" (load)="removeIframeHeader()"
+          src="https://app.powerbi.com/view?r=eyJrIjoiOWUwNjAyOWEtNzY5MC00OGRjLWFjZWMtZGY4Y2M3ODU4YTQ5IiwidCI6ImMyYTEzZDRjLTI2YjUtNDYxZC04MjJkLWM2OGU1NGE5M2MxYSIsImMiOjEwfQ%3D%3D"></iframe>
+</div>
