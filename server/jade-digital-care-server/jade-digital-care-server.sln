@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jade.Digital.Care.Server", "Jade.Digital.Care.Server\Jade.Digital.Care.Server.csproj", "{164D39A6-FCFE-461E-8825-12C6DD668BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jade.Digital.Care.Server.Tests", "Jade.Digital.Care.Server.Tests\Jade.Digital.Care.Server.Tests.csproj", "{9B6AB0AB-1684-4B68-ABCC-0DC693E71F01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{164D39A6-FCFE-461E-8825-12C6DD668BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164D39A6-FCFE-461E-8825-12C6DD668BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164D39A6-FCFE-461E-8825-12C6DD668BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164D39A6-FCFE-461E-8825-12C6DD668BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6AB0AB-1684-4B68-ABCC-0DC693E71F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6AB0AB-1684-4B68-ABCC-0DC693E71F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6AB0AB-1684-4B68-ABCC-0DC693E71F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6AB0AB-1684-4B68-ABCC-0DC693E71F01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD706A16-4F5D-4D19-BA24-F3971D585FDC}
+	EndGlobalSection
+EndGlobal
