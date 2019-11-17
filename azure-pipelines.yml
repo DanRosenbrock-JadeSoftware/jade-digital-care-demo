@@ -43,3 +43,50 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
     ArtifactName: 'jade-digital-care-server.$(Build.BuildNumber).zip'
+
+
+- task: Npm@1
+  displayName: 'Install angular CLI'
+  inputs:
+    command: custom
+    workingDir: client
+    verbose: false
+    customCommand: 'install @angular/cli -g'
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    workingDir: client
+    verbose: false
+
+- powershell: |
+   npm install rimraf -g
+   
+   rimraf node_modules
+   
+   rimraf package-lock.json
+   
+   npm install node-sass --force
+   
+   npm rebuild node-sass --force
+  displayName: 'PowerShell Script'
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    workingDir: client
+    verbose: false
+    customCommand: 'run build'
+
+- task: ArchiveFiles@2
+  displayName: 'Archive front-end artifact'
+  inputs:
+    rootFolderOrFile: client/dist
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/jade-digital-care.$(Build.BuildNumber).zip'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: App'
+  inputs:
+    ArtifactName: 'jade-digital-care.$(Build.BuildNumber).zip'
