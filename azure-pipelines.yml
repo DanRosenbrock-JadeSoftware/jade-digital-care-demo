@@ -1,23 +1,92 @@
-# Starter pipeline
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'client'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: 'server/jade-digital-care-server/jade-digital-care-server.sln'
+    vstsFeed: 'a28ae122-c4b7-4e1c-9df6-e3ec0c94ed7b'
+
+- task: VSBuild@1
+  displayName: 'Build Jade-Digital-Care Server'
+  inputs:
+    solution: 'server/jade-digital-care-server/jade-digital-care-server.sln'
+
+- task: VSTest@2
+  displayName: 'VsTest - testAssemblies'
+  inputs:
+    testAssemblyVer2: |
+     **\*tests*.dll
+     !**\*TestAdapter.dll
+     !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)\server\jade-digital-care-server\Jade.Digital.Care.Server.Tests\bin\Debug'
+    testFiltercriteria: 'TestCategory=Critical'
+    diagnosticsEnabled: True
+
+- task: ArchiveFiles@2
+  displayName: 'Archive build artifacts'
+  inputs:
+    rootFolderOrFile: 'server/jade-digital-care-server/Jade.Digital.Care.Server/bin'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/jade-digital-care-server.$(Build.BuildNumber).zip'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/'
+    ArtifactName: 'jade-digital-care-server.$(Build.BuildNumber).zip'
+
+
+- task: Npm@1
+  displayName: 'Install angular CLI'
+  inputs:
+    command: custom
+    workingDir: client
+    verbose: false
+    customCommand: 'install @angular/cli -g'
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    workingDir: client
+    verbose: false
+
+- powershell: |
+   npm install rimraf -g
+   
+   rimraf node_modules
+   
+   rimraf package-lock.json
+   
+   npm install node-sass --force
+   
+   npm rebuild node-sass --force
+  displayName: 'PowerShell Script'
+
+- task: Npm@1
+  displayName: 'npm build'
+  inputs:
+    command: custom
+    workingDir: client
+    verbose: false
+    customCommand: 'run build'
+
+- task: ArchiveFiles@2
+  displayName: 'Archive front-end artifact'
+  inputs:
+    rootFolderOrFile: client/dist
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/jade-digital-care.$(Build.BuildNumber).zip'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: App'
+  inputs:
+    ArtifactName: 'jade-digital-care.$(Build.BuildNumber).zip'
