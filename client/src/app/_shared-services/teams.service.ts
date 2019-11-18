@@ -22,7 +22,7 @@ export class TeamsService {
     },
     {
       Id: 3,
-      Name: 'Kelvin',
+      Name: 'Doug',
       ImageUrl: '../assets/jade-staff/p3.png'
     },
     {
