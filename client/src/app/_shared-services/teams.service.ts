@@ -17,7 +17,7 @@ export class TeamsService {
     },
     {
       Id: 2,
-      Name: 'Dave',
+      Name: 'Dylan',
       ImageUrl: '../assets/jade-staff/p2.png'
     },
     {
