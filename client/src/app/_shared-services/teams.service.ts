@@ -12,22 +12,22 @@ export class TeamsService {
   Yakuza: TeamMemberModel[] = [
     {
       Id: 1,
-      Name: 'Erin',
+      Name: 'Stacy',
       ImageUrl: '../assets/jade-staff/p1.png'
     },
     {
       Id: 2,
-      Name: 'Dylan',
+      Name: 'Bob',
       ImageUrl: '../assets/jade-staff/p2.png'
     },
     {
       Id: 3,
-      Name: 'Doug',
+      Name: 'Foo',
       ImageUrl: '../assets/jade-staff/p3.png'
     },
     {
       Id: 4,
-      Name: 'Tash',
+      Name: 'Greta',
       ImageUrl: '../assets/jade-staff/p4.png'
     }
   ];
